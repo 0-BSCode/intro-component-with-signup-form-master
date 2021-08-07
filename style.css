@@ -37,7 +37,7 @@ div.content-wrapper {
     font-family: 'Poppins';
     width: 125rem;
     height: 60rem;
-    margin: 7rem auto 4rem auto;
+    margin: 15rem auto 4rem auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -202,11 +202,22 @@ div.form-wrapper div.form-block form p.error-msg {
         padding-top: 5rem;
         padding-bottom: 6rem;
     }
+    /*----- CARD SPECIFICATIONS -----*/
+
+    div.content-wrapper {
+        margin: 20rem auto 5rem auto;
+    }
 
     /*----- VERIFICATION CLASSES -----*/
 
     div.form-wrapper div.form-block form input.error {
         background-size: 3rem 3rem;
+    }
+
+    /*----- ATTRIBUTION -----*/
+
+    p.attribution {
+        padding-bottom: 22rem;
     }
 }
 
