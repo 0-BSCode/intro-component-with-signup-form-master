@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+
+:root {
+    --red: hsl(0, 100%, 74%);
+    --green: hsl(154, 59%, 51%);
+    --blue: hsl(248, 32%, 49%);
+    --dark_blue: hsl(249, 10%, 26%);
+    --gray_blue: hsl(246, 25%, 77%);
+    --border_radius: 1.2rem;
+    --box_shadow: 0px 8px 1px #00000052;
+}
+
+*,
+*::before,
+*::after {
+    /* font-size: 62.5%; */
+    font-size: 8px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--red);
+    background-image: url("./images/bg-intro-desktop.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*---------- CARD SPECIFICATIONS ----------*/
+
+div.content-wrapper {
+    font-family: 'Poppins';
+    width: 125rem;
+    height: 60rem;
+    margin: 7rem auto 4rem auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+/*---------- LEFT COMPONENT ----------*/
+
+div.text-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 19rem;
+    color: white;
+}
+
+div.text-wrapper h1 {
+    font-size: 5.5rem;
+    line-height: 5.6rem;
+    font-weight: 700;
+}
+
+div.text-wrapper p {
+    padding-top: 4rem;
+    font-size: 1.8rem;
+}
+
+
+/*---------- RIGHT COMPONENT ----------*/
+
+div.form-wrapper {
+    width: 85%;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+div.form-wrapper div.subscription-block {
+    background: var(--blue);
+    height: 5rem;
+    border-radius: var(--border_radius);
+    box-shadow: var(--box_shadow);
+}
+
+div.form-wrapper div.form-block {
+    background: white;
+    margin-top: 3rem;
+    height: 48rem;
+    border-radius: var(--border_radius);
+    box-shadow: var(--box_shadow);
+    /* If all 4 messages are displayed, card becomes 52rem in height */
+}
+
+div.form-wrapper div.subscription-block p,
+div.form-wrapper div.subscription-block p span, 
+div.form-wrapper div.subscription-block p span b {
+    text-align: center;
+    color: white;
+    padding-top: 1.5rem;
+    font-size: 1.4rem;
+}
+
+div.form-wrapper div.subscription-block p {
+    color: rgba(255,255,255,0.9);
+}
+
+div.form-wrapper div.form-block form {
+    padding: 4rem;
+    padding-bottom: 0;
+}
+
+div.form-wrapper div.form-block p, div.form-wrapper div.form-block p a {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--gray_blue);
+}
+
+div.form-wrapper div.form-block p a {
+    text-decoration: none;
+    color: var(--red);
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+div.form-wrapper div.form-block p a:hover {
+    color: hsl(0, 96%, 54%);
+}
+
+div.form-wrapper div.form-block form input {
+    display: block;
+    margin-bottom: 2.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 2.5rem;
+    width: 100%;
+    border: 0.2rem solid #e6e6e6;
+    border-radius: 0.6rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:#7c7c7c;
+    background: white;
+}
+
+div.form-wrapper div.form-block form input:active {
+    border: 0.2rem solid #000000;
+    content: "";
+}
+
+div.form-wrapper div.form-block form input[type="submit"] {
+    background: var(--green);
+    border-color: hsl(153, 43%, 48%);
+    color: rgba(255,255,255,0.9);
+    box-shadow: 0px 3px 1px hsl(153, 43%, 48%);
+    margin-bottom: 2rem;
+    transition: all 0.3s;
+}
+
+div.form-wrapper div.form-block form input[type="submit"]:hover {
+    background: hsl(154, 65%, 68%);
+    border-color: hsl(154, 65%, 68%);
+    box-shadow: 0px 3px 1px hsl(153, 36%, 54%);
+}
+
+
+/*----- ATTRIBUTION -----*/
+
+.attribution {
+    z-index: 0;
+}
+
+/*----- VERIFICATION CLASSES -----*/
+
+div.form-wrapper div.form-block form input.error {
+    border-color: var(--red);
+    background-image: url("./images/icon-error.svg");
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+}
+
+div.form-wrapper div.form-block form p.error-msg {
+    width: 100%;
+    text-align: right;
+    color: var(--red);
+    position: relative;
+    bottom: 2rem;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/*---------- MEDIA QUERIES ----------*/
+
+@media only screen and (min-width: 1024px) {
+    :root {
+        font-size: 9px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    :root {
+        font-size: 6px;
+        padding-top: 5rem;
+        padding-bottom: 6rem;
+    }
+
+    /*----- VERIFICATION CLASSES -----*/
+
+    div.form-wrapper div.form-block form input.error {
+        background-size: 3rem 3rem;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+
+    :root {
+        font-size: 7.5px;
+    }
+    
+    /*----- CARD SPECIFICATIONS -----*/
+
+    body {
+        background-image: url('./images/bg-intro-mobile.png');
+        margin-bottom: 5rem;
+    }
+
+    div.content-wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        width: 55rem;
+        margin-top: 0;
+    }
+
+    /*----- LEFT COMPONENT -----*/
+
+    div.text-wrapper {
+        padding-top: 15rem;
+        text-align: center;
+    }
+
+    div.text-wrapper h1 {
+        font-size: 4.5rem;
+    }
+
+    div.text-wrapper p {
+        font-size: 2.5rem;
+    }
+
+    /*----- RIGHT COMPONENT -----*/
+
+    div.form-wrapper {
+        margin-top: 14rem;
+        width: 100%;
+    }
+
+    div.form-wrapper div.subscription-block {
+        height: 14rem;
+    }
+
+    div.form-wrapper div.subscription-block p {
+        padding-top: 1.3rem;
+    }
+
+    div.form-wrapper div.subscription-block p span {
+        display: block;
+    }
+
+    div.form-wrapper div.subscription-block p, 
+    div.form-wrapper div.subscription-block p span,
+    div.form-wrapper div.subscription-block p span b {
+        font-size: 2.8rem;
+    }
+
+    div.form-wrapper div.form-block {
+        height: 70rem;
+    }
+
+    div.form-wrapper div.form-block form input {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        font-size: 2rem;
+    }
+
+    div.form-wrapper div.form-block p {
+        width: 70%;
+        margin: auto;
+        line-height: 3rem;
+    }
+    
+    div.form-wrapper div.form-block p, div.form-wrapper div.form-block p a {
+        font-size: 1.7rem;
+    }
+
+    /*----- ATTRIBUTION -----*/
+
+    .attribution {
+        padding-top: 100rem;
+    }
+}
+
+@media only screen and (min-width: 368px) and (max-width: 480px) {
+
+    :root {
+        font-size: 6px;
+    }
+    
+    /*----- CARD SPECIFICATIONS -----*/
+
+    body {
+        background-image: url('./images/bg-intro-mobile.png');
+        margin-bottom: 5rem;
+    }
+
+    div.content-wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        width: 55rem;
+        margin-top: 0;
+    }
+
+    /*----- LEFT COMPONENT -----*/
+
+    div.text-wrapper {
+        padding-top: 15rem;
+        text-align: center;
+    }
+
+    div.text-wrapper h1 {
+        font-size: 4.5rem;
+    }
+
+    div.text-wrapper p {
+        font-size: 2.5rem;
+    }
+
+    /*----- RIGHT COMPONENT -----*/
+
+    div.form-wrapper {
+        margin-top: 14rem;
+        width: 100%;
+    }
+
+    div.form-wrapper div.subscription-block {
+        height: 14rem;
+    }
+
+    div.form-wrapper div.subscription-block p {
+        padding-top: 1.3rem;
+    }
+
+    div.form-wrapper div.subscription-block p span {
+        display: block;
+    }
+
+    div.form-wrapper div.subscription-block p, 
+    div.form-wrapper div.subscription-block p span,
+    div.form-wrapper div.subscription-block p span b {
+        font-size: 2.8rem;
+    }
+
+    div.form-wrapper div.form-block {
+        height: 70rem;
+    }
+
+    div.form-wrapper div.form-block form input {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        font-size: 2rem;
+    }
+
+    div.form-wrapper div.form-block p {
+        width: 70%;
+        margin: auto;
+        line-height: 3rem;
+    }
+    
+    div.form-wrapper div.form-block p, div.form-wrapper div.form-block p a {
+        font-size: 1.7rem;
+    }
+
+    /*----- ATTRIBUTION -----*/
+
+    .attribution {
+        padding-top: 105rem;
+    }
+}
